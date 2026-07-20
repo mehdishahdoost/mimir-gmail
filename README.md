@@ -4,7 +4,26 @@
 
 # Mimir Gmail MCP Server
 
+[![npm version](https://img.shields.io/npm/v/mimir-gmail.svg)](https://www.npmjs.com/package/mimir-gmail)
+[![npm downloads](https://img.shields.io/npm/dm/mimir-gmail.svg)](https://www.npmjs.com/package/mimir-gmail)
+[![license](https://img.shields.io/npm/l/mimir-gmail.svg)](https://github.com/wbh/mimir-gmail/blob/main/LICENSE)
+
 A Model Context Protocol (MCP) server that gives AI assistants full access to Gmail — read, send, search, draft, label, and manage emails through natural language.
+
+## Quick Install
+
+```bash
+npx mimir-gmail auth    # Authenticate with Google
+npx mimir-gmail         # Start the MCP server
+```
+
+Or install globally:
+
+```bash
+npm install -g mimir-gmail
+mimir-gmail auth
+mimir-gmail
+```
 
 ## Features
 
