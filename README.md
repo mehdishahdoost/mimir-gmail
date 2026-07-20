@@ -33,6 +33,26 @@ mimir-gmail
 - **Label management** — create, rename, delete labels
 - **Batch operations** — mark read/unread, archive, star multiple messages at once
 
+## Why mimir-gmail?
+
+Google offers an [official Gmail MCP server](https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server), but it's limited to 10 tools (read, search, draft, label) and is in Developer Preview. mimir-gmail is a **superset** — it includes everything the official server does plus full email sending and management:
+
+| Capability | Google Official | mimir-gmail |
+|------------|:-:|:-:|
+| Read / Search emails | ✓ | ✓ |
+| List / Create drafts | ✓ | ✓ |
+| Label management | ✓ | ✓ |
+| **Send emails** | ✗ | ✓ |
+| **Reply / Forward** | ✗ | ✓ |
+| **Archive / Trash** | ✗ | ✓ |
+| **Star messages** | ✗ | ✓ |
+| **Mark read/unread** | ✗ | ✓ |
+| **Thread support** | partial | ✓ |
+| **Batch operations** | ✗ | ✓ |
+| Any MCP client | ✗ | ✓ |
+
+mimir-gmail runs locally on stdio — no Google Cloud project beyond OAuth credentials required.
+
 ## Quick Start
 
 ### 1. Set up Google OAuth credentials
