@@ -16,15 +16,8 @@ export const SCOPES = [
 
 export function validateCredentials(): void {
   if (!CLIENT_ID || !CLIENT_SECRET) {
-    console.error("\n❌ Missing Google OAuth credentials.\n");
-    console.error("Set them with:\n");
-    console.error("  export GOOGLE_OAUTH_CLIENT_ID='your-client-id.apps.googleusercontent.com'");
-    console.error("  export GOOGLE_OAUTH_CLIENT_SECRET='your-client-secret'\n");
-    console.error("To create credentials:");
-    console.error("  1. Go to https://console.cloud.google.com/");
-    console.error("  2. Create a project and enable Gmail API");
-    console.error("  3. Go to APIs & Services → Credentials");
-    console.error("  4. Create OAuth 2.0 Client ID → Desktop app\n");
-    process.exit(1);
+    throw new Error(
+      "Missing Google OAuth credentials. Set GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET environment variables."
+    );
   }
 }
