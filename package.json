@@ -1,6 +1,6 @@
 {
   "name": "mimir-gmail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for Gmail - read, send, search, and manage emails via AI assistants",
   "main": "dist/index.js",
   "bin": {
