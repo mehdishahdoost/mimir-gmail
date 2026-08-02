@@ -140,7 +140,8 @@ Ask your AI assistant to:
 |------|-------------|
 | `read_message` | Read a specific email by ID — returns headers, body, attachment metadata |
 | `search_messages` | Search using Gmail query syntax with pagination |
-| `list_messages` | List messages in a label/folder (INBOX, SENT, custom labels) |
+| `list_messages` | List messages in a label/folder (INBOX, SENT, custom labels) with optional query filtering |
+| `count_messages` | Count messages matching a query; use this when an exact count is needed |
 | `send_email` | Send a new email with to, cc, bcc, subject, body |
 | `reply_to_message` | Reply to a specific message (supports reply-all) |
 | `forward_message` | Forward an email to new recipients |
@@ -179,7 +180,7 @@ Ask your AI assistant to:
 
 ## Gmail Search Syntax
 
-The `search_messages` tool supports Gmail's powerful search operators:
+The `search_messages` tool supports Gmail's powerful search operators. `list_messages` also accepts an additional query filter, and normalizes simple unread filters such as `is:unread` into Gmail's `UNREAD` label filter for more consistent listing metadata.
 
 | Operator | Example | Description |
 |----------|---------|-------------|
@@ -195,6 +196,10 @@ The `search_messages` tool supports Gmail's powerful search operators:
 | `size:` | `size:10M` | Filter by size |
 
 Combine operators: `from:john@example.com after:2024/01/01 has:attachment`
+
+### Count Metadata
+
+List-style message responses include Gmail's `resultSizeEstimate` and `countMetadata` with `type: "estimate"`. The existing `totalResults` field is retained as a compatibility alias for that estimate. Use `count_messages` when you need an exact count across all matching messages.
 
 ## Development
 
