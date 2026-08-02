@@ -97,6 +97,15 @@ This opens your browser to Google's login page. Sign in and grant permissions. T
 
 ### 4. Connect to your MCP client
 
+For OpenAI Codex, add mimir-gmail as an MCP server:
+
+```bash
+codex mcp add mimir-gmail \
+  --env GOOGLE_OAUTH_CLIENT_ID="your-client-id.apps.googleusercontent.com" \
+  --env GOOGLE_OAUTH_CLIENT_SECRET="your-client-secret" \
+  -- npx -y mimir-gmail
+```
+
 Add to your MCP client config (Claude Desktop, MiMo Code, etc.):
 
 ```json
