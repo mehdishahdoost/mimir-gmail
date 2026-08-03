@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Mimir Logo" width="400">
+  <img src="https://cdn.jsdelivr.net/npm/mimir-gmail/assets/logo.png" alt="Mimir Logo" width="400">
 </p>
 
 # Mimir Gmail MCP Server
